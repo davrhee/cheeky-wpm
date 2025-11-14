@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Typing Test — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1 class="title">Typing Test</h1>
+      <p class="subtitle">A short, totally innocent typing test — 20s sprint. What do you have to lose?</p>
+    </header>
+
+    <section class="card">
+      <div class="controls">
+        <button id="startBtn" class="btn">Start</button>
+        <button id="restartBtn" class="btn ghost">Restart</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value" id="time">20</div>
+          <div class="stat-label">seconds left</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="wpm">0</div>
+          <div class="stat-label">WPM</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="accuracy">100%</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+      </div>
+
+      <!-- Typing area: paragraph and input are overlaid -->
+      <div class="typing-area" id="typingArea">
+        <div id="paragraphWindow" class="paragraph-window" aria-live="polite"></div>
+        <!-- input sits visually on top of the paragraphWindow -->
+        <input id="input" class="type-input overlay-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Click Start, then type here..." />
+      </div>
+
+      <!-- Results area (hidden until test end) -->
+      <div class="results-area" id="resultsArea" aria-hidden="true">
+        <div class="results-window">
+          <div class="result-top">
+            <div class="result-emoji" id="resultEmoji">🫧</div>
+            <div class="result-title">
+              <div class="result-wpm" id="resultWpm">0 WPM</div>
+              <div class="result-label" id="resultLabel">Wet Noodle</div>
+            </div>
+          </div>
+          <div class="result-stats">
+            <div class="result-stat"><strong>WPM</strong><span id="resultWpmSmall">0</span></div>
+            <div class="result-stat"><strong>Accuracy</strong><span id="resultAccSmall">100%</span></div>
+          </div>
+          <div class="result-desc" id="resultDesc">A short description of the tier appears here — you can customize these in script.js.</div>
+          <div class="result-actions">
+            <button id="tryAgainBtn" class="btn">Try Again</button>
+            <!-- Share button intentionally removed per request -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <small>Created using GitHub Co-pilot. Hosted on GitHub. If you'd like to adapt this prototype for your own nefarious purposes, we can talk.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
