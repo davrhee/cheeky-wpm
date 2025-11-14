@@ -128,7 +128,7 @@ body{
   text-decoration: line-through rgba(255,107,107,0.16) !important;
 }
 
-/* Overlay input (transparent characters, caret visible) */
+/* Overlay input (transparent characters, caret hidden by default) */
 .overlay-input{
   position:absolute;
   inset:0;
@@ -143,7 +143,7 @@ body{
   outline:none !important;
   color:transparent !important;               /* hide typed characters */
   -webkit-text-fill-color: transparent !important;
-  caret-color: var(--para-blue) !important;   /* CARET VISIBLE */
+  caret-color: transparent !important;        /* CARET HIDDEN — change to var(--para-blue) to show */
   font-size:20px !important;
   line-height:2.2 !important;
   font-family: inherit !important;
@@ -151,7 +151,9 @@ body{
   pointer-events:auto !important;
 }
 
-/* If you find the caret vertically off by a few pixels, try adjusting padding:20px -> padding:18px or 22px */
+/* If you want to SHOW the caret, replace caret-color with a visible value:
+   caret-color: var(--para-blue) !important;
+   and remove or change color:transparent above. If the caret looks off vertically, tweak padding/line-height by a few pixels. */
 
 /* Selection on the invisible input should not highlight text */
 .overlay-input::selection{ background: transparent !important }
